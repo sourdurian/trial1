@@ -4,7 +4,7 @@ import pickle
 app = Flask(__name__)
 pkl_model = pickle.load(open('model.pkl', 'rb'))
 
-@app.route('/predict',methods=['GET'])
+@app.route('/predict',methods=['POST'])
 def predict():
     data = pd.DataFrame(request.json)
     index = data.index
